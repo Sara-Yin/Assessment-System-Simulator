@@ -17,12 +17,12 @@ int User_Job::random_jobnode(int maximum) {
 	return rand() % maximum;
 }
 
-void User_Job::excel_Queue(int totalnum_queue, vector<vector<int>>  job_queue) {
+void User_Job::excel_Queue(int totalnum_queue, vector<vector<int>>  job_queue){
 
-	//vector<vector<int>>  job_queue(totalnum_queue);
-	for (int i=0; i<totalnum_queue;i++){
-		job_queue[i].resize(10);
-	}
+	//job_queue.resize(totalnum_queue);
+	//for (int i=0; i<totalnum_queue;i++){
+	//	job_queue[i].resize(10);
+	//}
 
 
 	ifstream rFile;
@@ -34,7 +34,11 @@ void User_Job::excel_Queue(int totalnum_queue, vector<vector<int>>  job_queue) {
 
 	for (int i = 0; i < totalnum_queue; i++) {
 		 rFile>> job_queue[i][0]>> job_queue[i][1]>> job_queue[i][2] >> job_queue[i][3] >> job_queue[i][4] >> job_queue[i][5] >> job_queue[i][6] >> job_queue[i][7] >> job_queue[i][8] >> job_queue[i][9];
-		 //cout << "job_queue[i][0] is : "<< job_queue[i][0]<<","<< job_queue[i][0] << endl;
+		 cout << "job_queue[i][0] is : "<< job_queue[i][0]<<","<< job_queue[i][0] << endl;
 
 	}
+
+	/*void check_queue(int totalnum_queue, vector<vector<int>>  job_queue) {
+		for (int i=0;)
+	}*/
 }

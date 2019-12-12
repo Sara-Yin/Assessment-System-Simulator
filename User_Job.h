@@ -2,6 +2,7 @@
 #define User_Job_H
 #include <string>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class User_Job {

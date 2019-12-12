@@ -3,6 +3,7 @@
 #define Schedule_H
 #include <vector>
 #include "User_Job.h"
+using namespace std;
 
 class Schedule {
 

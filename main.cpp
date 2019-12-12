@@ -37,6 +37,9 @@ int main() {
 		cout << "please put in the number of the job:" << endl;
 		cin >> totalnum_job;
 		vector<vector<int>>  job_queue(totalnum_job);
+		for (int i = 0; i < totalnum_job; i++) {
+			job_queue[i].resize(10);
+		}
 		User_Job Q;
 		Q.excel_Queue(totalnum_job, job_queue);
 		Schedule Sche1;

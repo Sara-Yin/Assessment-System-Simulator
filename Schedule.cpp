@@ -5,6 +5,7 @@ int Schedule::avaliable_cpunode (int resource_nodes[128][8]) {
 	for (int i = 0; i < 120; i++) {
 		if (resource_nodes[i][2] == 0) {
 			c_num = c_num + 1;
+			cout << "available cpu num: "<< c_num <<endl;
 		}	
 	}
 	return c_num;
@@ -61,40 +62,57 @@ void Schedule::loop_job(int resource_nodes[128][8], int totalnum_queue, vector<v
 			exit(1);
 		}
 		
-		if (week_hours > 0) {    //weekday
+		if (weekend_hours ==0 && week_hours > 0 && next_weekjobid !=  -1) {    //weekday
 			if (job_queue[next_weekjobid][4] == 4 ) {    //gpu resource
-				if (job_queue[next_weekjobid][3]> 8) {
-					cout << "the job "<< next_weekjobid<<" is not available one, because its nodes more than 8 GPU."<<endl;
-
-				}else if (job_queue[next_weekjobid][3]> gpu_num){
+				if (job_queue[next_weekjobid][3]> gpu_num){
 					job_wait();
 					resource_wait();
 				}
 				else {
+					job_queue[next_weekjobid][5] = 1;
 					job_run();
 					resource_run();
 				}
 			}
-			else {
+			else{
+				if (job_queue[next_weekjobid][3] > cpu_num) {
+					job_wait();
+					resource_wait();
+				}
+				else {
+					job_queue[next_weekjobid][5] = 1;
+					job_run();
+					resource_run();
+				}
 
 			}
-
-
 
 			week_hours = week_hours - 1;
 			if (week_hours == 0) {
 				weekend_hours = 64;
 			}
 		}
-		else if (week_hours == 0 && weekend_hours > 0) {
-
-
+		else if (week_hours == 0 && weekend_hours > 0 && next_hugejobid !=-1) { 
+			//weekend
+			if (job_queue[next_hugejobid][3] > cpu_num) {
+				job_wait();
+				resource_wait();
+			}
+			else {
+				job_queue[next_hugejobid][5] = 1;
+				job_run();
+				resource_run();
+			}
 
 
 			weekend_hours = weekend_hours - 1;
 			if (weekend_hours == 0) {
 				week_hours = 104;
 			}
+		}
+		else {
+			cout << "There is no work to run." << endl;
+			exit(0);
 		}
 
 	}
