@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Scheduler.cpp" />
     <ClCompile Include="User_Job.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resource_Nodes.cpp" />

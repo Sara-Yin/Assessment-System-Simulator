@@ -33,17 +33,33 @@ int main() {
 
 	}
 	else if (choice == 2) {
-		int totalnum_job;
+		int totalnum_queue;
 		cout << "please put in the number of the job:" << endl;
-		cin >> totalnum_job;
-		vector<vector<int>>  job_queue(totalnum_job);
-		for (int i = 0; i < totalnum_job; i++) {
-			job_queue[i].resize(10);
+		cin >> totalnum_queue;
+		vector<vector<int>>  job_queue(totalnum_queue);
+		for (int i = 0; i < totalnum_queue; i++) {
+			job_queue[i].resize(11);
 		}
-		User_Job Q;
-		Q.excel_Queue(totalnum_job, job_queue);
+
+		//store data to array from cvs file
+		ifstream rFile;
+		rFile.open("User_Job.txt");
+		if (!rFile.is_open()) {
+			cout << "ERROR: not open the file" << endl;
+			exit(0);
+		}
+
+		for (int i = 0; i < totalnum_queue; i++) {
+			rFile >> job_queue[i][0] >> job_queue[i][1] >> job_queue[i][2] >> job_queue[i][3] >> job_queue[i][4] >> job_queue[i][5] >> job_queue[i][6] >> job_queue[i][7] >> job_queue[i][8] >> job_queue[i][9] >> job_queue[i][10];
+
+		}
+		//User_Job Q;
+		//Q.excel_Queue(totalnum_queue, job_queue);
+
+
 		Schedule Sche1;
-		Sche1.loop_job(resource_nodes, totalnum_job, job_queue);
+
+		Sche1.loop_job(resource_nodes, totalnum_queue, job_queue);
 
 
 
@@ -51,10 +67,9 @@ int main() {
 	else {
 		cout << "please put in the right choice.";
 	}
-	
 
 	
-
+	return 0;
 }
 
 
