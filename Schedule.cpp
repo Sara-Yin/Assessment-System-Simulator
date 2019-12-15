@@ -21,7 +21,7 @@ int Schedule::avaliable_gpunode(int resource_nodes[128][8]) {
 	return g_num;
 };
 
-int Schedule::next_hugejob_id(int totalnum_queue, vector<vector<int>>  job_queue) {
+int Schedule::next_hugejob_id(int totalnum_queue, vector<vector<int> >  job_queue) {
 	for (int i = 0; i < totalnum_queue; i++) {
 		if (job_queue[i][5] == 0 && (job_queue[i][4] !=5)) {
 			return i;  //the order of the job
@@ -34,7 +34,7 @@ int Schedule::next_hugejob_id(int totalnum_queue, vector<vector<int>>  job_queue
 	}
 }
 
-int Schedule::next_weekjob_id(int totalnum_queue, vector<vector<int>>  job_queue) {
+int Schedule::next_weekjob_id(int totalnum_queue, vector<vector<int> >  job_queue) {
 
 	for (int i = 0; i < totalnum_queue; i++) {
 		if (job_queue[i][5] == 0 && job_queue[i][4] == 5) {
@@ -50,7 +50,7 @@ int Schedule::next_weekjob_id(int totalnum_queue, vector<vector<int>>  job_queue
 
 
 
-void Schedule::loop_job(int resource_nodes[128][8], int totalnum_queue, vector<vector<int>>  job_queue) {
+void Schedule::loop_job(int resource_nodes[128][8], int totalnum_queue, vector<vector<int> >  job_queue) {
 
 	for (int i = 0; i < totalnum_queue;i++) {
 		int cpu_num = avaliable_cpunode(resource_nodes); //how many available cpu

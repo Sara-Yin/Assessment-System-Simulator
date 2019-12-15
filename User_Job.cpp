@@ -17,7 +17,7 @@ int User_Job::random_jobnode(int maximum) {
 	return rand() % maximum;
 }
 
-void User_Job::excel_Queue(int totalnum_queue, vector<vector<int>>  job_queue){
+void User_Job::excel_Queue(int totalnum_queue, vector<vector<int> >  job_queue){
 
 	//job_queue.resize(totalnum_queue);
 	//for (int i=0; i<totalnum_queue;i++){

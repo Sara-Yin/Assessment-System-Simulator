@@ -14,9 +14,9 @@ public:
 	int left_gpu_nodes;
 	int avaliable_cpunode(int resource_nodes[128][8]);
 	int avaliable_gpunode(int resource_nodes[128][8]);
-	void loop_job(int resource_nodes[128][8], int totalnum_queue, vector<vector<int>>  job_queue);
-	int next_weekjob_id(int totalnum_queue, vector<vector<int>>  job_queue);
-	int next_hugejob_id(int totalnum_queue, vector<vector<int>>  job_queue);
+	void loop_job(int resource_nodes[128][8], int totalnum_queue, vector<vector<int> >  job_queue);
+	int next_weekjob_id(int totalnum_queue, vector<vector<int> >  job_queue);
+	int next_hugejob_id(int totalnum_queue, vector<vector<int> >  job_queue);
 	void job_wait();
 	void resource_wait();
 	void job_run();
