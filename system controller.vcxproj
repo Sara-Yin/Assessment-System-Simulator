@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Scheduler.cpp" />
     <ClCompile Include="User_Job.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resource_Nodes.cpp" />
-    <ClCompile Include="Schedule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User_Job.h" />

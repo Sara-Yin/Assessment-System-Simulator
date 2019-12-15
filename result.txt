@@ -1,0 +1,7 @@
+the number of jobs processed per week: 0
+the actual number of machine hours consumed by users jobs: 0
+the utilization rtio: 0
+the price paid by users: 0
+average wait time in each queue: 0
+average turnaround time ratio: 1
+economic balance of the centre: 0

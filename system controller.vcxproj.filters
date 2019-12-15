@@ -18,13 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Schedule.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Resource_Nodes.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="User_Job.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scheduler.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>

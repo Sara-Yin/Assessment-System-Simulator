@@ -9,14 +9,14 @@ using namespace std;
 class Resource_Nodes {
 public:
 	/* the columns of the resource nodes array
-	int nid;//node id
-	string node_type;//0 means cpu  1 means gpu
-	int resource_status;//0 means not using, 1 means running;
-	int resource_wtime;//wait time
-	int resource_rtime;//running job time
-	int resource_totaltime;//total running time = wait time+ running job time
-	int resource_jobindex = -1;//connect with the job array
-	int n_jid;// connect with the job id
+	0 int nid;//node id
+	1 string node_type;//0 means cpu  1 means gpu
+	2 int resource_status;//0 means waiting, 1 means running;
+	3 int resource_wtime;//wait time
+	4 int resource_rtime;//running job time
+	5 int resource_totaltime;//total running time = wait time+ running job time
+	6 int resource_jobindex = -1;//connect with the job array                      
+	7 int n_jid;// connect with the job id
 	*/
 
 	void Create_Resource(int resource_nodes[128][8]);
